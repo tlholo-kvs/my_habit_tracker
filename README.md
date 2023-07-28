@@ -1,16 +1,15 @@
 # my_habit_tracker
 
-A new Flutter project.
+A simple Android application that allows users to track their habits, track their progress and view them on a calender
 
-## Getting Started
+Features I hope to include:
+* Push notifications
+* To do list view screen
+* Account creation and management
+* Achievements view
 
-This project is a starting point for a Flutter application.
+I will be using Backendless as the database
 
-A few resources to get you started if this is your first Flutter project:
+# Installing
+Install APK on Android phone or Virtual Device
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
