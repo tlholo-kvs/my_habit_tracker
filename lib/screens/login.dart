@@ -13,13 +13,24 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
+        Container(
+          decoration: const BoxDecoration(
+            color: Colors.black,
+          ),
+            child: const Text(
+          "Log in below",
+          style: TextStyle(fontWeight: FontWeight.w600, color: Colors.white),
+        )),
         const MyTextInput(
+          hintTextForField: 'Enter email',
           labelText: "Enter email",
           textInputType: TextInputType.emailAddress,
         ),
         const MyTextInput(
           labelText: "Enter password",
+          hintTextForField: 'Enter password',
           textInputType: TextInputType.visiblePassword,
         ),
         ElevatedButton(
@@ -34,8 +45,9 @@ class _LoginPageState extends State<LoginPage> {
 class MyTextInput extends StatelessWidget {
   final String labelText = "";
   final TextInputType textInputType = TextInputType.none;
+  final String hintTextForField = "";
 
-  const MyTextInput({super.key, required labelText, required textInputType});
+  const MyTextInput({super.key, required labelText, required textInputType, required hintTextForField, });
 
   @override
   Widget build(BuildContext context) {
@@ -44,6 +56,7 @@ class MyTextInput extends StatelessWidget {
       child: TextFormField(
         decoration: InputDecoration(
           labelText: labelText,
+          hintText: hintTextForField,
           fillColor: Colors.white,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(25.0),
