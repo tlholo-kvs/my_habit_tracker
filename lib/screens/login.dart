@@ -20,13 +20,18 @@ class _LoginPageState extends State<LoginPage> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
-          decoration: const BoxDecoration(
-            color: Colors.black,
-          ),
-            child: const Text(
-          "Log in below",
-          style: TextStyle(fontWeight: FontWeight.w600, color: Colors.white),
-        )),
+            width: 200,
+            height: 100,
+            decoration: const BoxDecoration(
+              color: Colors.black,
+            ),
+            child: const Center(
+              child: Text(
+                "Log in below",
+                style:
+                    TextStyle(fontWeight: FontWeight.w600, color: Colors.white),
+              ),
+            )),
         const MyTextInput(
           hintTextForField: 'Enter email',
           labelText: "Enter email",
@@ -50,4 +55,3 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 }
-
