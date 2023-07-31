@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:my_habit_tracker/routes/routes.dart';
+
+import '../widgets/mytextinput.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -10,58 +13,45 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
+        Container(
+            width: 200,
+            height: 100,
+            decoration: const BoxDecoration(
+              color: Colors.black,
+            ),
+            child: const Center(
+              child: Text(
+                "Log in below",
+                style:
+                    TextStyle(fontWeight: FontWeight.w600, color: Colors.white),
+              ),
+            )),
         const MyTextInput(
+          hintTextForField: 'Enter email',
           labelText: "Enter email",
           textInputType: TextInputType.emailAddress,
         ),
         const MyTextInput(
           labelText: "Enter password",
+          hintTextForField: 'Enter password',
           textInputType: TextInputType.visiblePassword,
         ),
         ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, MyRoutes.calenderPage);
+          },
+          style: ElevatedButton.styleFrom(
+            fixedSize: const Size(200, 10),
+          ),
           child: const Text('Log In'),
         ),
       ],
-    );
-  }
-}
-
-class MyTextInput extends StatelessWidget {
-  final String labelText = "";
-  final TextInputType textInputType = TextInputType.none;
-
-  const MyTextInput({super.key, required labelText, required textInputType});
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 8.0, right: 8, top: 8, bottom: 8),
-      child: TextFormField(
-        decoration: InputDecoration(
-          labelText: labelText,
-          fillColor: Colors.white,
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(25.0),
-            borderSide: const BorderSide(),
-          ),
-        ),
-        validator: (val) {
-          if (val!.isEmpty) {
-            return "Email cannot be empty";
-          } else {
-            return null;
-          }
-        },
-        keyboardType: textInputType,
-        style: const TextStyle(
-          fontFamily: "Poppins",
-        ),
-      ),
     );
   }
 }
